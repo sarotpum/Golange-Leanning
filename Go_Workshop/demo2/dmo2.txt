@@ -1,0 +1,7 @@
+จงแก้ไข func isOdd ให้สามารถ return boolean ได้อย่างถูกต้อง โดยที่ถ้าใส่ค่าเป็นเลขคี่จะ return true และเลขคู่จะ return false
+
+package exercise
+
+func  (n int) bool {
+    return false
+}

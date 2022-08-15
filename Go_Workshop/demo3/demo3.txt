@@ -1,0 +1,6 @@
+จงแก้ไข func ต่อไปนี้ ให้สามารถทำงานได้อย่างถูกต้อง
+sumOfFirst(3) should return 3+2+1=6
+isPrime(1) should return false
+isPrime(2) should return true
+isPrime(3) should return true
+isPrime(4) should return false

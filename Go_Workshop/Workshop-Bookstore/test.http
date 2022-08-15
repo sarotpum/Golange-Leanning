@@ -1,0 +1,17 @@
+POST http://localhost:8085/books
+Content-type: application/json
+
+{
+    "name":"HArry Potter and the Sorcerer's Stone",
+    "author":"J. K. Rowling"
+}
+
+###
+
+GET http://localhost:8085/books
+Content-type: application/json
+
+###
+
+GET http://localhost:8085/books/1
+Content-type: application/json

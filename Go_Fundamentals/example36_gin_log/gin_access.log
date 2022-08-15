@@ -1,0 +1,10 @@
+[GIN-debug] GET    /                         --> main.main.func1 (4 handlers)
+[GIN-debug] GET    /error                    --> main.main.func2 (4 handlers)
+[GIN-debug] GET    /profile                  --> main.main.func3 (4 handlers)
+[GIN-debug] [WARNING] You trusted all proxies, this is NOT safe. We recommend you to set a value.
+Please check https://pkg.go.dev/github.com/gin-gonic/gin#readme-don-t-trust-all-proxies for details.
+[GIN-debug] Listening and serving HTTP on :85
+[GIN] 2022/08/14 - 22:43:00 |[97;42m 200 [0m|            0s |             ::1 |[97;44m GET     [0m "/"
+[GIN] 2022/08/14 - 22:43:33 |[97;42m 200 [0m|      1.0327ms |             ::1 |[97;44m GET     [0m "/error"
+Count : 2
+[GIN] 2022/08/14 - 22:44:12 |[97;42m 200 [0m|       942.7µs |             ::1 |[97;44m GET     [0m "/profile"

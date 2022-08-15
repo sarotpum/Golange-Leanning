@@ -1,0 +1,20 @@
+จงแก้ไข func ต่อไปนี้ ให้สามารถ return ค่าออกมาได้อย่างถูกต้อง
+    greeting("Pallat") -> "Hello, Pallat"
+    greetingWithAge("Pallat", 30) -> "Hello, Pallat. You are 30 years old."
+    greetingWithAgeAndDrink("Pallat", 30, "Cola") -> "Hello, Pallat. You are 30 years old and your favorite drink is Cola."
+
+
+// greeting("Pallat") should return "Hello, Pallat"
+func greeting(name string) string {
+    return ""
+}
+
+// greetingWithAge("Pallat", 30) should return "Hello, Pallat. You are 30 years old."
+func greetingWithAge(name string, age uint) string {
+    return ""
+}
+
+// greetingWithAgeAndDrink("Pallat", 30, "Cola") should return "Hello, Pallat. You are 30 years old and your favorite drink is Cola."
+func greetingWithAgeAndDrink(name string, age uint, drink string) string {
+    return ""
+}

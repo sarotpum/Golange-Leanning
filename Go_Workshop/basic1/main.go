@@ -1,0 +1,33 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	t := make(chan bool)
+	go timeout(t)
+
+	ch := make(chan string)
+	go readword(ch)
+
+	select {
+	case word := <-ch:
+		fmt.Println("Received", word)
+	case <-t:
+		fmt.Println("Timeout.")
+	}
+}
+
+func readword(ch chan string) {
+	fmt.Println("Type a word, then hit Enter.")
+	var word string
+	fmt.Scanf("%s", &word)
+	ch <- word
+}
+
+func timeout(t chan bool) {
+	time.Sleep(10 * time.Second)
+	t <- false
+}

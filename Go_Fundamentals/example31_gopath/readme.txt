@@ -1,0 +1,1 @@
+EXPORT GOPATH="/Users/Sarot/source/repos/go_workshops/demo_30_gopath"

@@ -1,0 +1,125 @@
+create table freelance(
+    id serial PRIMARY KEY,
+    name varchar(50)
+);
+
+select * from freelance;
+
+
+insert into freelance(name) values ('Peter'), ('Ann'), ('Jane');
+
+
+alter table freelance
+    add column gender char(1);
+
+
+alter table freelance
+    add column age int,
+    add column email char(50);
+
+
+alter table freelance
+    rename column name to first_name;
+
+
+alter table freelance
+    alter column age type float;
+
+
+alter table freelance
+    drop column gender,
+    drop column email;
+
+
+-- ex 1.
+create table category (
+    category_id varchar(2) primary key,
+    descr varchar
+);
+
+create table drinkmenu (
+    id int primary key,
+    descr varchar,
+    category_id varchar(2),
+    price int
+    foreign key (category_id) references category(category_id)
+);
+
+insert into category values 
+    ('cf', 'coffee'),
+    ('te', 'tea'),
+    ('ju', 'juice');
+
+insert into drinkmenu values 
+    (1, 'mocha', 'cf', 50), 
+    (2, 'latte', 'cf', 40), 
+    (3, 'green tea', 'te', 35);
+
+-- ex 2.
+create table student_grade (
+    student_id int,
+    subject_id varchar(7),
+    grade varchar(2),
+    primary key (student_id, subject_id)
+);
+
+create table subject (
+    subject_id varchar(7),
+    descr varchar,
+    primary key (subject_id)
+);
+
+
+-- index to non unique and UNIQUE (descr ห้ามซ้ำ)
+create unique index uidx_menu_descr on menu(descr);
+
+create index idx_menu_category on menu(category);
+
+drop index uidx_menu_descr;
+
+
+-- serial COLUMN
+create table fruit(
+    id serial primary key,
+    name varchar(50),
+    price int
+);
+
+insert into fruit (name, price) values ('coconut', 15);
+
+select * from fruit;
+
+insert into fruit (name, price) VALUES
+('papaya', 25),
+('mango', 20),
+('water melon', 40);
+
+truncate table fruit restart identity;
+
+
+-- GENERATED COLUMNS
+-- ex 1.
+create table product (
+    id serial,
+    price numeric(8, 2),
+    cost numeric(8, 2),
+    margin numeric(8, 2) generated always as ((price-cost)/price) stored
+);
+
+insert into product (price, cost) values 
+(110, 100), (50, 20);
+
+-- ex 2.
+create table customer(
+    id serial,
+    income int,
+    income_level varchar generated always as (
+        case 
+            when income > 100000 then 'high'
+            when income > 50000 then 'medium'
+            else 'low'
+        end
+    ) stored
+);
+
+insert into customer(income) values (200000), (12000), (60000);

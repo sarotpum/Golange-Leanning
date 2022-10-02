@@ -50,7 +50,6 @@ func main() {
 
 	a := [...]int{1, 3, 5, 7, 9} 
 
-	ss = a[:]
 	fmt.Printf("%d %d %p %p\n", len(ss), cap(ss), s, &a)
 	ss = append(s, 11, 13)
 	fmt.Printf("%d %d %p %p\n", len(ss), cap(ss), s, &a)

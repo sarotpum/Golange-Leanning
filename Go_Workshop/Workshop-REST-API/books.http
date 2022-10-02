@@ -1,0 +1,19 @@
+@host = localhost:8080
+
+GET http://{{host}}/books
+content-type: application/json
+ 
+###
+ 
+POST http://{{host}}/books
+Content-Type: application/json
+
+{
+    "id": "5",
+    "title": "The Godfather",
+    "author": "Mario Puzo"
+}
+
+###
+ 
+DELETE http://{{host}}/books/2

@@ -6,6 +6,7 @@ func main() {
 	msg := "some message"
 	var msgPointer *string = &msg //* => ใส่เพื่อว่าจะใส่ค่าใน pointer, & => pointer ตัวแปรที่เราจะใส่
 	fmt.Println(msg)
+	fmt.Println(&msg)
 	fmt.Println(msgPointer)
 	fmt.Println(*msgPointer) // * เพื่อจะนำค่า value ออกมาแสดง ex. = some message
 
@@ -47,7 +48,6 @@ func mutate(_p *int) {
 }
 
 */
-
 
 /* demo3
 

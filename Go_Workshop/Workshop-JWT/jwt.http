@@ -1,0 +1,21 @@
+# @base_url=http://localhost:8085
+
+# POST {{base_url}}/todos
+# Content-Type: application/json
+
+# {
+#     "text": "test 1"
+# }
+
+
+POST http://localhost:8085/todos
+Content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjQ3MDE0NDl9.MeVY1KCNM7ACRYrupDINw3a1U1LgYmChohv_DHFRwN0
+
+{
+    "text": "test 6"
+}
+ 
+###
+
+GET http://localhost:8085/tokenz

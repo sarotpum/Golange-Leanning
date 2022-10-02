@@ -20,6 +20,7 @@ func main() {
 	})
 
 	// Define path "/login" and get string query
+	// localhost:82/login?username=Je&password=1234
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprintf(w, "Login, %s, %s", r.URL.Query().Get("username"), r.URL.Query().Get("password"))
 	})
